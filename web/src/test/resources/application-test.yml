@@ -1,0 +1,38 @@
+server:
+  tomcat:
+    max-http-post-size: 10MB
+  port: 8080
+  servlet:
+    context-path: /upload
+core:
+  debug: false
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:hiveel;MODE=MYSQL
+    username: root
+    password: root
+    hikari:
+      pool-name: hiveelpay_hiveelco
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 300000
+      allow-pool-suspension: true
+      auto-commit: true
+      connection-test-query: select 1
+
+#apiKey
+apikey:
+  list:
+    - hiveel
+    - appx
+#上传目录枚举
+folder:
+  list:
+    - ISSUE           #司机突发情况上传这些图片
+    - INSPECTION      # 例行检查问题图片
+    - PERSON         #司机头像
+
+autossav:
+  accountServer: http://172.168.2.16:9980/auth

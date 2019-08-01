@@ -1,0 +1,23 @@
+server:
+  jetty:
+    max-http-post-size: 0
+  port: 9882
+  servlet:
+    context-path: /upload
+
+core:
+  debug: false
+
+apikey:
+  list:
+    - hiveel
+    - appx
+
+#上传目录枚举
+folder:
+  list:
+    - FREIGHT      # 货运单
+    - PERSON         #司机头像
+
+autossav:
+  accountServer: http://freitx_auth:9880/auth
